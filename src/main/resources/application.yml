@@ -1,0 +1,33 @@
+server:
+  port: 8092
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://tismart_preyes:Visanet2019%24@mongodb-dev-ls0q2.mongodb.net/omni_db
+  cloud:
+   config:
+     enabled: false
+  application:
+    name: integration-mongodb
+application:
+  errors:
+    BAD_REQUEST_EXCEPTION:
+      code: "SBSM-400"
+      message: "General Bad Request"
+    SERVER_ERROR_EXCEPTION:
+      code: "SBSM-500"
+      message: "General Exception"
+    UNAUTHORIZED_EXCEPTION:
+      code: "SBSM-401"
+      message: "Not authorized"
+    NO_CONTENT_EXCEPTION:
+      code: "NOTCONTENT-204"
+      message: "No content"
+  openapi:
+    info:
+      title: Integration MongoDB API
+      description: Descripción del API.
+      version: 1.0.0
+springdoc:
+  api-docs:
+    path: /openapi
